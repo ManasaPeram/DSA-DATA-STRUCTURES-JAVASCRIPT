@@ -143,3 +143,63 @@ const capitalizeString = strings.map((string)=> {
 })
 console.log(capitalizeString);
 
+
+//BASICS//
+/********************* */
+//Question 1: Sum of all natural numbers from 1 to n
+//Time Complexity -O(1)
+const sumNaturalNumbers = function(num){
+  return (num*(num+1))/2
+}
+const num =5
+console.log(sumNaturalNumbers(num));
+
+//Question 2: Sum of digits of a number
+//Time Complexity -O(n)
+const sumofDigits = function(n){
+  return n.toString().split('').reduce((sum, digit)=> sum+parseInt(digit),0)
+}
+const n = 123
+console.log(sumofDigits(n)); //6  i,e 1+2+3=6
+
+//Question 3: Count the number of digits of a number
+//Time Complexity -O(1)
+const countDigits = n1=> `${n1}`.length
+const nDigits = 1234
+console.log(countDigits(nDigits)); //4
+
+//Question 4: Check if a number is palindrome
+//Time Complexity -O(n)
+const isPalindrome = num1 =>{
+  return num.toString().split('').reverse().join('') === num,toString()
+}
+const num1 = 121
+console.log(isPalindrome(num1)); //true
+
+//Question 5: Find nth Fibonacci number
+//Time Complexity -O(n)
+const nthFib = n2 => {
+  if(n2<2){
+    return n2
+  }
+  let prev =0, curr=1, next;
+  for(let i=2; i<=n2;i++){
+    next = prev+curr;
+    prev=curr;
+    curr=next
+  }
+  return next
+}
+const n2 =10
+console.log(nthFib(n2)); //55
+
+//Question 6: Missing Number in an Array
+//Time Complexity -O(n)
+const missingNum = num10 =>{
+  const num = num10.length+1;
+  const total = (num*(num+1))/2;
+  const sum = num10.reduce((acc, num2) => acc+num2, 0);
+  return total-sum;
+}
+const num10 = [1, 2, 4, 5, 6]
+console.log(missingNum(num10)); //3

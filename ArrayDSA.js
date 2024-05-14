@@ -134,3 +134,17 @@ const removeElements = function(nums6, val){
     const nums7 =[1,2,2,1]
     const val1 =2
     console.log(removeElements(nums6, val1));    //[1,1]
+
+    //Max Consecutive Ones
+    const findMaxConsecutive = function(nums8){
+        return Math.max(...nums8.join('').split('0').map((substring) => substring.length))
+    }
+    const nums8 = [1,1,0,1,1,1]
+    console.log(findMaxConsecutive(nums8)); //3
+
+    // Sum of all natural numbers from 1 to n
+const  sunOfAllNaturalNumbers = function(nums9){
+    return (nums9*(nums9+1))/2
+}
+const nums9 = 5
+console.log(sunOfAllNaturalNumbers(nums9)); //15
